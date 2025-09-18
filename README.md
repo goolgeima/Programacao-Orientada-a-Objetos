@@ -23,3 +23,15 @@ fornecer a altura, largura e profundidade da caixa. Para caixas cilíndricas (tu
 fornecer o diâmetro e a altura. Seu programa deve permitir que o usuário escolha o tipo de caixa, e 
 insira as informações necessárias. Ao fim do processo o programa deve apresentar como saída o 
 volume da caixa e a quantidade de material necessário para criá-la
+
+## Exercício 3: Agenda de contatos
+
+Implemente um sistema de Agenda de Contatos que contenha as classes 
+Data (com dia, mês e ano), Contato (indicando se é Whatsapp ou Telegram e 
+armazenando um número em string) e Pessoa (com nome, data de 
+nascimento e até quatro contatos), incluindo métodos para cadastrar e listar 
+contatos. Crie ainda a classe Agenda, capaz de armazenar até quinze 
+pessoas, permitindo cadastrar, listar todas e buscar uma pessoa pelo nome. 
+No programa principal, instancie a agenda, cadastre 15 pessoas com seus 
+dados e contatos, liste todas as cadastradas e possibilite a pesquisa por 
+nome para exibir as informações completas da pessoa encontrada.
