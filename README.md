@@ -1,37 +1,41 @@
-# Programacao-Orientada-a-Objetos
-Exercícios desenvolvidos na disciplina de Programação Orientada a Objetos na faculdade
+# Projeto Zoo: Herança e Polimorfismo em Java
 
-## Exercício 1: Jogador de futebol
+## Objetivo
 
-Crie uma classe para representar um jogador de futebol, com os atributos 
-nome, posição, data de nascimento, nacionalidade, altura e peso. Crie um 
-método para calcular a idade do jogador e outro método para mostrar quanto 
-tempo falta para o jogador se aposentar. Para isso, considere que os 
-jogadores da posição de defesa se aposentam em média aos 40 anos, os 
-jogadores de meio-campo aos 38 e os atacantes aos 35. Seu programa 
-principal deve ser capaz de cadastrar um jogador lendo as informações do 
-teclado.
+Modelar um sistema de gerenciamento de Zôo em Java para demonstrar os conceitos de **Herança** e **Polimorfismo**, criando classes hierárquicas para diferentes tipos de animais.
 
-## Exercício 2: Fábrica de caixas
+---
 
-Você foi contratado para criar um software que auxilie na fabricação de caixas. A fábrica cria 2 tipos 
-de caixas: retangulares e cilíndricas. Para ambos os modelos de caixas o seu programa deve 
-calcular o volume e quanto papelão será necessário para fabricar a caixa. Na fabricação iremos 
-desconsiderar as dobras necessárias ou mesmo aparas para grudar as caixas, iremos apenas 
-considerar as caixas como simples formas geométricas. Para uma caixa retangular o usuário irá 
-fornecer a altura, largura e profundidade da caixa. Para caixas cilíndricas (tubos) o usuário irá 
-fornecer o diâmetro e a altura. Seu programa deve permitir que o usuário escolha o tipo de caixa, e 
-insira as informações necessárias. Ao fim do processo o programa deve apresentar como saída o 
-volume da caixa e a quantidade de material necessário para criá-la
+## Estrutura e Requisitos das Classes
 
-## Exercício 3: Agenda de contatos
+O projeto deve ser construído com uma classe base (`Animal`) e classes filhas (`Peixe` e `Mamifero`).
 
-Implemente um sistema de Agenda de Contatos que contenha as classes 
-Data (com dia, mês e ano), Contato (indicando se é Whatsapp ou Telegram e 
-armazenando um número em string) e Pessoa (com nome, data de 
-nascimento e até quatro contatos), incluindo métodos para cadastrar e listar 
-contatos. Crie ainda a classe Agenda, capaz de armazenar até quinze 
-pessoas, permitindo cadastrar, listar todas e buscar uma pessoa pelo nome. 
-No programa principal, instancie a agenda, cadastre 15 pessoas com seus 
-dados e contatos, liste todas as cadastradas e possibilite a pesquisa por 
-nome para exibir as informações completas da pessoa encontrada.
+### 1. Classe Base: Animal
+
+* **Atributos:** Deve ter atributos privados para `nome`, `comprimento`, `patas`, `cor`, `ambiente` e `velocidade`.
+* **Métodos Requeridos:**
+    * Construtor para inicializar todos os atributos.
+    * `void dados()` para imprimir as informações básicas do animal.
+
+### 2. Classe Filha: Peixe (Herda de Animal)
+
+* **Padrões Fixos:** `patas` = 0, `ambiente` = "Mar", `cor` = "Cinzento".
+* **Atributo Próprio:** Uma `String` para armazenar a **característica** (ex: "Barbatanas e cauda").
+* **Métodos Requeridos:** Construtor e `void dados()` (sobrescrito) que inclua a característica extra.
+
+### 3. Classe Filha: Mamifero (Herda de Animal)
+
+* **Padrão Fixo:** `ambiente` = "Terra".
+* **Atributo Próprio:** Uma `String` para armazenar o **alimento** preferido.
+* **Subclasse:** O Urso é um Mamífero com a cor "Castanho" e alimento "Mel".
+* **Métodos Requeridos:** Construtor e `void dados()` (sobrescrito) que inclua o alimento.
+
+---
+
+## Classe Principal (Main)
+
+A classe principal deve gerenciar o plantel do Zôo.
+
+* **Armazenamento:** Deve usar um **`ArrayList<Animal>`** para armazenar todos os animais.
+* **Funcionalidades:** Adicionar e remover animais do plantel.
+* **Impressão:** Imprimir a lista completa de animais, utilizando o **Polimorfismo** (chamando o método `dados()` de cada objeto), seguindo o formato de impressão do exemplo.
